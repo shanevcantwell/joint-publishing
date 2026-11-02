@@ -1,0 +1,19 @@
+# Defense in depth only; the explicit publication allowlist is the privacy boundary.
+/_reference_archive/
+/inbox/
+/joint-publishing-coldstart-*.zip
+/.pi/
+
+# Local editor and runtime debris
+*~
+*.swp
+*.tmp
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+dist/
+build/
+*.log
