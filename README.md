@@ -1,59 +1,63 @@
-# Joint publishing (`JPUB`)
+# Joint publishing
 
-> **Public documentation; no broader license.** No repository license has been selected. Access and platform operation remain subject to rights necessarily provided by GitHub's Terms of Service and applicable law; no broader permission to reuse, modify, or redistribute repository content is granted. This repository contains no implementation, service, standard, or conformance program.
+**Publish the consequential connection, not just the conclusion.**
 
-Joint publishing explores how a publisher may package selected consequential relationships, falsifiable claims, evidence, contrasts, falsification routes, and scoped attestations for independent inspection. The current repository contains design documentation and proposed contracts, not a production format or supported implementation.
+A report usually gives the reader an author's finished interpretation. A raw evidence dump does the opposite: it leaves the reader to discover the important relationships unaided. Joint publishing explores a third option—**publish the selected relationship and enough of its evidence to let someone else investigate it independently**.
 
-## Founding status
+A **joint** is a relationship, contradiction, transition, or other connection that the publisher considers consequential. A joint is not automatically true or important just because someone marked it. The recipient gets to decide.
 
-| Field | Value |
+A proposed **joint publication** would keep the selected material, the marked connections, challengeable claims, counterevidence, falsification routes, and optional independently signed attestations together as a portable evidence object. A GitHub issue, pull request, essay, or video could be a useful *rendering* of that object rather than its only form.
+
+> **Current status:** JPUB is a public, documentation-only exploration—not a released standard or working toolkit. There is no implemented schema, validator, executable skill, signing profile, or public dossier. See [STATUS.md](STATUS.md).
+
+## A small example
+
+Imagine an agent investigating a workflow tool. It finds three individually deliberate behaviors: arguments are provided inline, workflows run in the background, and completion notices shorten long results. Together, they may prevent a caller from passing a large generated input and recovering a complete report without another model-mediated transcription step.
+
+A conventional issue might jump straight to “add file-backed arguments and result storage.” A joint publication would distinguish:
+
+- **Observations:** the actual behaviors, exact revisions, and supporting source or test evidence.
+- **The joint:** why those behaviors compose into a capability gap for a particular use case.
+- **Claims and falsifiers:** what could demonstrate that the alleged gap does not exist.
+- **Contrasts:** working small-input cases, counterexamples, alternatives, and uncertainties.
+- **Candidate application:** one proposed correction, separate from the finding itself.
+- **Attestations:** who claims to have reproduced, challenged, reviewed, or endorsed *which part*, under what conditions.
+
+The maintainer could reproduce the observation and still reject the proposed fix. Another investigator could reproduce one claim while disputing the interpretation. Neither would need to rewrite the original evidence object.
+
+*This is an illustration of the idea, not a completed or verified public JPUB exemplar.*
+
+## Why separate attestations?
+
+Instead of adding another reviewer's signature or verdict inside a publication, a future dossier could carry **detached, scoped statements** referring to exact artifact or claim identities. Signers could endorse different parts, report inconclusive results, or disagree.
+
+The design deliberately separates **a valid signature**, **an identity claim**, **independence of investigation**, **the truth of an assertion**, and **the recipient's decision to trust or act**. Existing cryptographic formats and tools are under consideration; none has been selected for JPUB.
+
+Likewise, no signature, schema, or publication would grant permission to execute untrusted code. The reader controls admission, verification, and execution.
+
+## Watch the idea (optional)
+
+These short, **AI-generated NotebookLM explainers** are informal introductions, not technical authority. They simplify the design and sometimes describe hoped-for benefits as though they were established. The repository documents are the source for actual scope and status.
+
+- [Unbundling the Truth: The Anatomy of an AI Agent Claim or Bug Report](https://www.youtube.com/watch?v=FbsSNax0kpc) — 4:19 overview of the proposed approach.
+- [How a Joint Publication Object Works](https://www.youtube.com/shorts/tQHFgWU8w4w) — 1:23 on evidence, selected relationships, and renderings.
+- [How Detached Scoped Attestations Secure Digital Records](https://www.youtube.com/shorts/QmHhmjCyQhA) — 1:26 on independently signed statements that leave the original unchanged.
+
+## Explore the design
+
+| Start with | For |
 |---|---|
-| Repository | `shanevcantwell/joint-publishing` |
-| Code | `JPUB` |
-| Visibility | Public |
-| Publication authorization | Exact curated 37-file tree authorized by the operator on 2026-11-02 |
-| License | None selected; no broader grant beyond GitHub Terms or applicable law |
-| Stage | Founding documentation / incubating |
-| Accepted decisions | [ADR-JPUB-001](docs/decisions/adr-jpub-001-repository-identity-and-boundaries.md) only |
-| Proposed decisions | [ADR-JPUB-002 through ADR-JPUB-006](docs/decisions/README.md) |
-| Implementation / schema / validator | None |
-| Executable skills / signing profile | None |
-| Public exemplar / release | None |
-| Standard status | Not a standard |
-| Hosted service | None |
+| [Joints and selection](docs/concepts/joints-and-selection.md) | What a joint is—and is not |
+| [Draft publication model](docs/draft-publication-model.md) | The proposed evidence object and its boundaries |
+| [Start here](START-HERE.md) | A cold-reader path through the full repository |
+| [Decision index](docs/decisions/README.md) | Accepted versus proposed architectural decisions |
+| [Component map](docs/architecture/component-map.md) | The proposed schema, reader, publisher, and transport roles |
+| [Open questions](docs/open-questions.md) and [roadmap](docs/roadmap.md) | What must be settled or tested before implementation |
 
-## Intended distinctions
+The long-term experiment is modest: **can a useful, self-contained publication invite independent inspection and voluntary reuse without a service, registry, or standards campaign?** That adoption is a hypothesis to test, not an outcome to presume. This repository is intended as a static reference library, not a centralized trust authority.
 
-The design work keeps these boundaries explicit:
+## Project boundaries and permissions
 
-- a selected **joint** is not the same as a falsifiable **claim** or an optional candidate remedy;
-- a proposed publication core is not the same as a prose rendering;
-- exact bytes and digests are not detached attestations;
-- authenticity is not truth, relevance, admission, priority, merge authority, or execution permission;
-- construction is not authorization or transport;
-- a generic reader, a reader-local generator, and a publisher have different roles;
-- internal research representations are not serialized dossiers;
-- a reference repository is not an availability, identity, or trust authority; and
-- correction or retraction adds attributed history rather than overwriting an earlier record.
+Only [ADR-JPUB-001](docs/decisions/adr-jpub-001-repository-identity-and-boundaries.md) is accepted; the five technical ADRs remain proposals. No hosted service, release, supported protocol, or conformance program exists. External substantive contributions are not currently accepted.
 
-## Read next
-
-1. [START-HERE.md](START-HERE.md) — reading order and boundaries.
-2. [STATUS.md](STATUS.md) — what exists and what does not.
-3. [ADR-JPUB-001](docs/decisions/adr-jpub-001-repository-identity-and-boundaries.md) — accepted identity and repository boundaries.
-4. [Draft publication model](docs/draft-publication-model.md) — revisable design vocabulary.
-5. [Architecture map](docs/architecture/component-map.md) — proposed components and authority surfaces.
-6. [Open questions](docs/open-questions.md) and [roadmap](docs/roadmap.md) — unresolved choices and future gates.
-7. [Source ledger](docs/source-ledger.md) — metadata-only provenance for the founding transformation.
-
-## Present contents and non-goals
-
-The tree contains Markdown design notes, six decision records, proposed role contracts, experiment plans, and future schema/tool checklists. It contains no source code, executable, workflow, package manifest, schema file, validator, operational skill, cryptographic profile, public dossier, or release artifact.
-
-GitHub distributes these static documents only. It is not a dossier registry, hosted trust service, registration authority, SaaS product, network identity service, recipient queue, or guarantee that any future artifact remains available.
-
-## Contribution posture
-
-External substantive contributions are not currently accepted. GitHub's fork and pull-request capabilities do not grant decision, publication, acceptance, merge, or execution authority. The long-term contribution posture remains an [open question](docs/open-questions.md).
-
-See [repository policy](docs/repository-policy.md) before copying or presenting the work as operative.
+**No broader repository license has been selected.** Public visibility and GitHub's Terms of Service do not themselves grant general permission to copy, modify, or redistribute the material. The intended permissions, provenance, and contribution posture are unresolved; see the [repository policy](docs/repository-policy.md) and [status](STATUS.md). Future independent adoption depends on resolving those rights, not merely encouraging imitation.
